@@ -24,7 +24,7 @@ pipeline{
         }
         stage('Deploy'){
             steps{
-                sh 'nohup java -jar /var/lib/jenkins/workspace/PetClinicDeclaritivePipeline/target/*.jar &'
+                sh '/var/lib/jenkins/workspace/PetClinicDeclaritivePipeline/nohup java -jar /var/lib/jenkins/workspace/PetClinicDeclaritivePipeline/target/*.jar &'
             }
         }
         }
