@@ -24,7 +24,8 @@ pipeline{
         }
         stage('Deploy'){
             steps{
-                sh 'JENKINS_NODE_COOKIE=dontKillMe /opt/nohup java -jar /var/lib/jenkins/workspace/PetClinicDeclaritivePipeline/target/*.jar &'
+                sh "export JENKINS_NODE_COOKIE=dontKillMe"
+                sh "sudo sh -c 'nohup java -jar /var/lib/jenkins/workspace/PetClinicDeclaritivePipeline/target/*.jar &'"
             }
         }
         }
